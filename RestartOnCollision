@@ -1,0 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class restartOnCollision : MonoBehaviour
+{
+    [SerializeField]
+    string tag;
+ 
+    private void OnCollisionEnter(restartOnCollision collision)
+    {   
+        if(collision.collider.tag == tag)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+}
